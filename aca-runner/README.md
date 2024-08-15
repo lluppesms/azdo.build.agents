@@ -86,7 +86,7 @@ This document will show you how to create a Azure Container Apps hosted Devops B
 
 ### Success!
 
-That's it!  You should now have an Azure Container App that will scale up to as many instances as you need to run your own build jobs! You won't have to wait in a queue behind anyone else, and you can run your builds whenever you want by specifying `pool: > name: > aca_build_runner`!
+That's it!  You should now have an Azure Container App that will scale up to as many instances as you need to run your own build jobs! You won't have to wait in a queue behind anyone else, and you can run your builds whenever you want by specifying `pool: > name: > aca_build_runner`! *(or - whatever you called your agent pool!)*
 
 ---
 
