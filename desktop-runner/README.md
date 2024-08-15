@@ -4,21 +4,19 @@ This document will show you how to create a self-hosted Azure Devops Build Runne
 
 ## Steps to create a Desktop Runner
 
-<!-- 1. Find your Computer Name. -->
-1. Create a PAT Token in Azure DevOps with Agent Pool read/write permissions.
-1. Create an Agent Pool to be linked to your desktop.
-1. Install the Agent Software
-1. Run a job to test this
+1. [Create a PAT Token in Azure DevOps](#step-1-create-a-pat-token-in-azure-devops)
+1. [Create an Agent Pool to be linked to your desktop](#step-2-create-an-agent-pool-to-be-linked-to-your-desktop)
+1. [Install the Agent Software](#step-3-install-the-agent-software)
+1. [Run a job to test this](#step-4-run-a-job-to-test-this)
 
 <!-- ---
-
 ### 1. Find your Computer Name
 
 - Open a PowerShell command prompt as administrator.  Determine your machine name by running the command `hostname`. (HostName.exe is an executable file available on your computer drive, which should be located in the C:\Windows\System32 directory)
  -->
 ---
 
-### 1. Create a PAT Token in Azure DevOps with Agent Pool read/write permissions
+### Step 1. Create a PAT Token in Azure DevOps
 
 - Go to User Settings -> Personal Access Token -> then click on the New Token button
   ![Create a PAT Token](./images/PAT-Token-01.png)
@@ -33,7 +31,7 @@ This document will show you how to create a self-hosted Azure Devops Build Runne
 
 ---
 
-### 2. Create an Agent Pool to be linked to your desktop
+### Step 2. Create an Agent Pool to be linked to your desktop
   
 - Go to Azure DevOps -> Organization Settings -> Pipelines: Agent Pools -> and click the Add Pool button
 ![Create a pool 1](./images/Agent-Pool-01.png)
@@ -46,7 +44,7 @@ This document will show you how to create a self-hosted Azure Devops Build Runne
 
 ---
 
-### 4. Install the Agent Software
+### Step 3. Install the Agent Software
 
 - Go to your new Pool, select the Agents Tab, and then click on the `New Agent` button
 
@@ -80,7 +78,7 @@ This document will show you how to create a self-hosted Azure Devops Build Runne
 
 ---
 
-### 5. Run a job to test this
+### Step 4. Run a job to test this
 
 - Go to Azure DevOps -> Pipelines -> New Pipeline
 - Select the repository where you have your pipeline code
