@@ -9,7 +9,7 @@ This document will show you how to create a Azure Container Apps hosted Devops B
 ## Steps to create a Container App Runner
 
 1. [Create a PAT Token in Azure DevOps](#step-1-create-a-pat-token-in-azure-devops)
-1. [Run your first pipeline](#step-2-create-an-agent-pool-to-be-linked-to-your-container-app)
+1. [Create an Agent Pool](#step-2-create-an-agent-pool-to-be-linked-to-your-container-app)
 1. [Create the Azure Container App Environment](#step-3-create-the-azure-container-app-environment)
 1. [Create a Place Holder Job and Event Based Trigger Job](#step-4-create-a-place-holder-job-and-event-based-trigger-job)
 
