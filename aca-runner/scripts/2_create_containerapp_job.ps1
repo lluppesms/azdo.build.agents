@@ -32,7 +32,9 @@
 #  -ContainerRegistrySuffix 'acaagentacr' `
 #  -ContainerImageSuffix = 'azure-pipelines-ubuntu-agent:1.0' `
 #  -PlaceholderSuffix 'placeholder-agent-job' `
-#  -JobSuffix 'azure-pipelines-agent-job'
+#  -JobSuffix 'azure-pipelines-agent-job' `
+#  -MaxJobs 5 `
+#  -PollingIntervalSeconds 10
 # ------------------------------------------------------------------------------------
 
 param(
@@ -46,7 +48,9 @@ param(
     [Parameter()] [string] $ContainerRegistrySuffix  = 'acaagentacr',
     [Parameter()] [string] $ContainerImageSuffix = 'azure-pipelines-ubuntu-agent:1.0',
     [Parameter()] [string] $PlaceholderSuffix = 'placeholder-agent-job',
-    [Parameter()] [string] $JobSuffix = 'azure-pipelines-agent-job'
+    [Parameter()] [string] $JobSuffix = 'azure-pipelines-agent-job',
+    [Parameter()] [string] $MaxJobs = 5, # Maximum number of jobs to run per polling interval
+    [Parameter()] [string] $PollingIntervalSeconds = 10  # Interval to check each event source in seconds
 )
 
 $ErrorActionPreference = "Stop"
@@ -71,6 +75,9 @@ Write-Host "** ContainerImageName: $ContainerImageName" -ForegroundColor Yellow
 Write-Host "** ManagedIdentityResourceName: $ManagedIdentityResourceName" -ForegroundColor Yellow
 Write-Host "** PlaceholderJobName: $PlaceholderJobName" -ForegroundColor Yellow
 Write-Host "** JobName: $JobName" -ForegroundColor Yellow
+Write-Host "** MaxJobs: $MaxJobs" -ForegroundColor Yellow
+Write-Host "** PollingIntervalSeconds: $PollingIntervalSeconds" -ForegroundColor Yellow
+
 Write-Host "----------------------------------------------------------------------------------------------------" -ForegroundColor Yellow
 
 Write-Host "`n"
@@ -134,6 +141,8 @@ Write-Host "**   Env: $ContainerAppsEnvName"
 Write-Host "**   Image: $ContainerRegistryName.azurecr.io/$ContainerImageName" 
 Write-Host "**   PoolName: $AzdoAgentPoolName"
 Write-Host "**   AzdoOrgUrl: $AzdoOrgUrl"
+Write-Host "**   MaxJobs: $MaxJobs"
+Write-Host "**   PollingIntervalSeconds: $PollingIntervalSeconds"
 Write-Host "----------------------------------------------------------------------------------------------------" -ForegroundColor Yellow
 # Note: set max-executions to be how many jobs are picked up each time the job polls
 # Set the polling-interval to be how often it check for new jobs (in seconds)
@@ -145,8 +154,8 @@ az containerapp job create -n "$JobName" -g "$ResourceGroupName" --environment "
     --parallelism 1 `
     --image "$ContainerRegistryName.azurecr.io/$ContainerImageName" `
     --min-executions 0 `
-    --max-executions 5 `
-    --polling-interval 10 `
+    --max-executions $MaxJobs `
+    --polling-interval $PollingIntervalSeconds `
     --scale-rule-name "azure-pipelines" `
     --scale-rule-type "azure-pipelines" `
     --scale-rule-metadata "poolName=$AzdoAgentPoolName" "targetPipelinesQueueLength=1" `
