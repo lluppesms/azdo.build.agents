@@ -2,7 +2,7 @@
 
 If you need additional build agents for your Azure DevOps Organization, you can purchase additional Microsoft Hosted Agents in your Azure DevOps Organization Settings -> Billing.  That is the easiest way to do this, but there is an additional charge for these.
 
-An alternative method is to create your own custom build agents, which you can hose on your own desktop or in an Azure Container Apps environment.
+An alternative method is to create your own custom build agents, which you can host on your own desktop or in an Azure Container Apps environment.
 
 This repo will walk you through the process of creating your own custom Azure Devops Build Runners. You can create them in one of two ways, depending on your use case:
 
