@@ -4,7 +4,7 @@ If you need additional build agents for your Azure DevOps Organization, you can 
 
 An alternative method is to create your own custom build agents, which you can host on your own desktop or in an Azure Container Apps environment.
 
-This repo will walk you through the process of creating your own custom Azure Devops Build Runners. You can create them in one of two ways, depending on your use case:
+This will walk you through the process of creating your own custom Azure Devops Build Runners. You can create them in one of two ways, depending on your use case:
 
 * [Use Azure Container Apps as the build agent](./aca-runner/README.md)
 * [Use your own desktop as the build agent](./desktop-runner/README.md)
