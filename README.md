@@ -17,4 +17,5 @@ The Desktop version instructions would also apply if you want to use a VM in Azu
 
 [Self-hosted Windows agents](https://learn.microsoft.com/en-us/azure/devops/pipelines/agents/windows-agent?view=azure-devops)
 
-<!-- Another example for VM Scale Set Agents: https://dev.to/n3wt0n/everything-about-the-azure-pipelines-scale-set-agents-vmss-cp2 -->
+<!-- Another example for VM Scale Set Agents: https://dev.to/n3wt0n/everything-about-the-azure-pipelines-scale-set-agents-vmss-cp2 
+     Also: Run Azure Pipelines in Docker (same guy -- CoderDave) -- https://www.youtube.com/watch?v=rO-VKProMp8 -->
