@@ -16,3 +16,5 @@ The Desktop version instructions would also apply if you want to use a VM in Azu
 [Tutorial: Deploy self-hosted CI/CD runners and agents with Azure Container Apps jobs](https://learn.microsoft.com/en-us/azure/container-apps/tutorial-ci-cd-runners-jobs?tabs=bash&pivots=container-apps-jobs-self-hosted-ci-cd-azure-pipelines)
 
 [Self-hosted Windows agents](https://learn.microsoft.com/en-us/azure/devops/pipelines/agents/windows-agent?view=azure-devops)
+
+<!-- Another example for VM Scale Set Agents: https://dev.to/n3wt0n/everything-about-the-azure-pipelines-scale-set-agents-vmss-cp2 -->
